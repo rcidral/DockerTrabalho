@@ -1,2 +1,78 @@
 # DockerTrabalho
-Comandos para alteração do teclado: sudo localectl list-keymaps sudo localectl set-keymap br-abnt2 Links de referência: https://docs.oracle.com/en/learn/oracle-linux-localization/index.html#update-the-system-date-and-time    Configuração de rede: su curl ifconfig.me vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 BOOTPROTO=static IPADDR=000.000.000.000 NETMASK=255.255.255.0 vi /etc/hostname oracle-linux.localdomain ip route vi /etc/sysconfig/network NETWORKING=yes HOSTNAME=oracle-linux GATEWAY=10.0.2.2 Links de referência: https://www.nanoshots.com.br/2015/10/configurando-interface-de-rede.html https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s1-networkscripts-interfaces    Configuração de SSH: vi /etc/ssh/sshd_config PermitRootLogin no systemctl restart sshd Links de referência: https://www.tecmint.com/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/    Comandos para instalação do Docker: sudo yum update sudo yum install -y yum-utils sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo sudo yum update sudo yum install docker-ce docker-ce-cli containerd.io sudo systemctl start docker sudo systemctl enable docker shutdown -r now systemctl status docker sudo docker run hello-world sudo groupadd docker sudo usermod -aG docker nome_do_usuário newgrp docker Links de referência: https://www.how2shout.com/linux/how-to-install-docker-ce-on-oracle-linux-8-7/    Comandos para instalação da imagem ELK: docker pull sebp/elk docker images docker run -d --restart unless-stopped -p 5601:5601 -p 9200:9200 -p 5044:5044 -it id_imagem docker ps docker rename id_container elk Links de referência: https://elk-docker.readthedocs.io/ https://docs.docker.com/config/containers/start-containers-automatically/    Redimensionamento de diretório: Links de referência: https://itsfoss.com/increase-disk-size-virtualbox/#:~:text=Method%201:%20Using%20the%20Virtual,tab%20of%20VirtualBox%20home%20page.&amp;text=Select%20one%20of%20your%20virtual,Once%20done%20click%20%C3%A2%C2%80%C2%9CApply%C3%A2%C2%80%C2%9D. https://www.tecmint.com/extend-and-reduce-lvms-in-linux/    Versionamento Git: Abrir local do arquivo. git init git add git commit git commit -am "Aqui vai uma mensagem" Links de referência: https://www.software.ac.uk/resources/guides-everything/using-git-shared-folders-and-virtual-machines-3        Obs: Estrutura de diretórios linux: https://canaltech.com.br/linux/entendendo-a-estrutura-de-diretorios-do-linux/  Obs.1: Como operar o Vim: https://www.webmundi.com/sistema-operacional/curso-de-linux-basico/como-usar-o-vim-basico-editor-de-texto-via-terminal-aula-13-modulo-5/  Obs.2: Comando para remover containers parados: docker rm $(docker ps --filter status=exited -q)  Obs.3: Comando para parar a execução de um container: docker container stop id_container https://stack.desenvolvedor.expert/appendix/docker/comandos.html
+
+Comandos para alteração do teclado: 
+
+sudo localectl list-keymaps sudo localectl set-keymap br-abnt2 
+
+Configuração de rede: 
+
+su curl ifconfig.me 
+
+vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
+
+BOOTPROTO=static 
+
+IPADDR=000.000.000.000 
+
+NETMASK=255.255.255.0 
+
+vi /etc/hostname oracle-linux.localdomain 
+
+ip route 
+
+vi /etc/sysconfig/network 
+
+NETWORKING=yes 
+
+HOSTNAME=oracle-linux 
+
+GATEWAY=10.0.2.2     
+
+
+Configuração de SSH: 
+
+vi /etc/ssh/sshd_config 
+
+PermitRootLogin no 
+
+systemctl restart sshd    
+
+
+Comandos para instalação do Docker: 
+
+sudo yum update sudo yum install -y yum-utils 
+
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo 
+
+sudo yum update sudo yum install docker-ce docker-ce-cli containerd.io 
+
+sudo systemctl start docker 
+
+sudo systemctl enable docker 
+
+shutdown -r now 
+
+systemctl status docker 
+
+sudo docker run hello-world 
+
+sudo groupadd docker 
+
+sudo usermod -aG docker nome_do_usuário 
+
+newgrp docker 
+
+
+Comandos para instalação da imagem ELK: 
+
+docker pull sebp/elk 
+
+docker images 
+
+docker run -d --restart unless-stopped -p 5601:5601 -p 9200:9200 -p 5044:5044 -it id_imagem
+
+docker ps 
+
+docker rename id_container elk 
+
+
