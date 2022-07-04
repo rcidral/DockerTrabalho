@@ -1,0 +1,2 @@
+FROM sebp/elk
+WORKDIR /PROJECT/
