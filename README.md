@@ -1,6 +1,16 @@
 # Trabalho Docker ELK
 
+## Criar máquina virtual
+Obter imagem _Oracle Linux_ em:
+https://yum.oracle.com/oracle-linux-isos.html
 
+Obter instalador _VirtualBox_: 
+https://www.virtualbox.org/wiki/Downloads
+
+Em _Software Selection_ alterar a opção para _Minimal Install_
+![Captura de tela 2022-07-05 132402](https://user-images.githubusercontent.com/108694840/177373712-fe9bc1fa-cc3d-408f-b2cb-5f4453a38e9b.png)
+
+Em _Installation Destination_ alterar _Storage Configuration_ para a opção _Custon_
 ## Configurar rede: 
 Entrar como root
 ```
@@ -14,7 +24,6 @@ Alterar configurações da placa de rede
 ```
 $ vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
 ```
-Alterar e inserir parâmetros
 ```
 BOOTPROTO=static 
 
@@ -22,16 +31,18 @@ IPADDR=000.000.000.000
 
 NETMASK=255.255.255.0 
 ```
+> Alterar e inserir novos parâmetros
+
 > Substituir os zeros pelo número do ip
 
 Alterar hostname
 ```
 $ vi /etc/hostname 
 ```
-Novo nome
 ```
 oracle-linux.localdomain 
 ```
+> Substituir nome padrão por "oracle-linux"
 ```
 $ vi /etc/sysconfig/network 
 ```
