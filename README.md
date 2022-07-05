@@ -22,6 +22,8 @@ IPADDR=000.000.000.000
 
 NETMASK=255.255.255.0 
 ```
+> Substituir os zeros pelo número do ip
+
 Alterar hostname
 ```
 $ vi /etc/hostname 
@@ -51,6 +53,7 @@ Alterar parâmetro
 ```
 PermitRootLogin no 
 ```
+Reestartar serviço ssh
 ```
 $ systemctl restart sshd    
 ```
@@ -72,16 +75,19 @@ $ sudo systemctl start docker
 ```
 $ sudo systemctl enable docker 
 ```
-Reinicialização do sistema
+Reiniciar sistema
 ```
 $ shutdown -r now 
 ```
+Mostrar serviço Docker ativo
 ```
 $ systemctl status docker 
 ```
+Executar imagem de teste
 ```
 $ sudo docker run hello-world 
 ```
+Definir usuário com privilégios no docker
 ```
 $ sudo groupadd docker 
 ```
@@ -94,18 +100,23 @@ $ newgrp docker
 
 
 ## Instalar imagem ELK: 
+Baixar imagem
 ```
 $ docker pull sebp/elk 
 ```
+Consultar imagens instaladas
 ```
 $ docker images 
 ```
+Executar container
 ```
 $ docker run -d --restart unless-stopped -p 5601:5601 -p 9200:9200 -p 5044:5044 -it id_imagem
 ```
+Exibir containers ativos
 ```
-$ docker ps 
+$ docker ps
 ```
+Renomear container
 ```
 $ docker rename id_container elk 
 ```
