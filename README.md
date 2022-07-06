@@ -70,8 +70,8 @@ $ systemctl restart sshd
 ```
 
 
-## Acesso SSH via CMD
-Abra o _CMD_ do _Windows_ e digite o comando
+## Acessar remotamente via SSH
+Abra o _Prompt de Comando_ e digite
 ```
 ssh -p 2222 nome_do_usuario@127.0.0.1
 ```
