@@ -75,7 +75,7 @@ Abra o _CMD_ do _Windows_ e digite o comando
 ```
 ssh -p 2222 nome_do_usuario@127.0.0.1
 ```
-> Preecher com nome de usuário do Linux
+> Preencher com nome de usuário do Linux
 
 
 ## Instalar Docker: 
