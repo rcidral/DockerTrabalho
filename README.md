@@ -70,6 +70,14 @@ $ systemctl restart sshd
 ```
 
 
+## Acesso SSH via CMD
+Abra o _CMD_ do _Windows_ e digite o comando
+```
+ssh -p 2222 nome_do_usuario@127.0.0.1
+```
+> Preecher com nome de usuário do Linux
+
+
 ## Instalar Docker: 
 ```
 $ sudo yum update sudo yum install -y yum-utils 
