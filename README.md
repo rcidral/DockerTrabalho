@@ -18,11 +18,11 @@ $ su
 ```
 Obter endereço ip
 ```
-$ curl ifconfig.me 
+# curl ifconfig.me 
 ```
 Alterar configurações da placa de rede
 ```
-$ vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
+# vi /etc/sysconfig/network-scripts/ifcfg-enp0s3 
 ```
 ```
 BOOTPROTO=static 
@@ -37,14 +37,14 @@ NETMASK=255.255.255.0
 
 Alterar hostname
 ```
-$ vi /etc/hostname 
+# vi /etc/hostname 
 ```
 ```
 oracle-linux.localdomain 
 ```
 > Substituir nome padrão por "oracle-linux"
 ```
-$ vi /etc/sysconfig/network 
+# vi /etc/sysconfig/network 
 ```
 ```
 NETWORKING=yes 
@@ -58,7 +58,7 @@ GATEWAY=10.0.2.2
 ## Configurar de SSH: 
 Bloquear acesso root via ssh
 ```
-$ vi /etc/ssh/sshd_config 
+# vi /etc/ssh/sshd_config 
 ```
 Alterar parâmetro
 ```
@@ -66,7 +66,7 @@ PermitRootLogin no
 ```
 Reestartar serviço ssh
 ```
-$ systemctl restart sshd    
+# systemctl restart sshd    
 ```
 
 
